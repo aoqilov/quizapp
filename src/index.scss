@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+.app {
+  height: 100vh;
+  display: flex;
+  display: flex;
+  background-color: skyblue;
+}
+.main {
+  width: 75%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.718), black),
+    url(https://webpulse.imgsmail.ru/imgpreview?key=pic2216451614981962372&mb=pulse)
+      no-repeat;
+  display: flex;
+  flex-direction: column;
+  .top {
+    height: 50%;
+    position: relative;
+    .timer {
+      position: absolute;
+      left: 45%;
+      top: 50%;
+      width: 210px;
+      height: 110px;
+      border-radius: 10%;
+      border: 5px solid white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .time {
+        display: flex;
+        font-size: 40px;
+        font-weight: bold;
+      }
+    }
+  }
+  .bottom {
+    height: 50%;
+    .trivia {
+      height: 100%;
+      .questions {
+        width: 80%;
+        margin: 0px auto;
+        padding: 10px 0;
+        background: linear-gradient(to bottom, rgb(22, 25, 28), black);
+        clip-path: polygon(
+          0 0,
+          49% 0,
+          100% 0,
+          98% 50%,
+          100% 100%,
+          53% 100%,
+          0 100%,
+          2% 50%
+        );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid white;
+        font-size: 30px;
+      }
+      .answer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        height: 70%;
+        flex-wrap: wrap;
+        .box {
+          cursor: pointer;
+          width: 40%;
+          padding: 30px 0;
+          background: linear-gradient(to bottom, rgba(2, 79, 79, 0.248), black);
+          text-align: center;
+          margin: 10px;
+          font-size: 27px;
+          border-radius: 10px;
+          border: 2px solid white;
+
+          &:hover {
+            background: linear-gradient(to bottom, rgb(50, 60, 60), black);
+            border: 2px solid rgb(255, 255, 255);
+          }
+          &:active {
+            background: linear-gradient(
+              to bottom,
+              rgb(244, 244, 244),
+              rgb(224, 224, 224)
+            );
+            color: black;
+          }
+        }
+        .box.active {
+        }
+        .box.correct {
+          animation: correct 3s ease forwards;
+          @keyframes correct {
+            30% {
+              background-color: rgb(225, 0, 255);
+            }
+            0% {
+              background-color: blue;
+            }
+            100% {
+              background: linear-gradient(to bottom, green, green);
+            }
+          }
+        }
+        .box.wrong {
+          animation: wrong 5s ease forwards;
+          @keyframes wrong {
+            30% {
+              background-color: rgb(234, 0, 255);
+            }
+            0% {
+              background-color: blue;
+            }
+            100% {
+              background: linear-gradient(to bottom, red, red);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.pyramid {
+  width: 25%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .moneyList {
+    list-style: none;
+    padding: 0px;
+    width: 100%;
+
+    .moneyListItem {
+      display: flex;
+      align-items: center;
+      width: 80%;
+      margin: 7px auto;
+      padding: 5px 10px;
+      border-radius: 5px;
+
+      .itemNumber {
+        font-size: 20px;
+        font-weight: 300;
+        width: 25%;
+      }
+      .itemAmount {
+        font-size: 18px;
+        font-weight: 100;
+      }
+    }
+    .moneyListItem.active {
+      background-color: teal;
+    }
+  }
+}
+
+.end {
+  text-align: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  font-size: 45px;
+  padding: 5px 30px;
+  background-color: rgb(0, 51, 51);
+  border-radius: 15px;
+  border: solid 2px white;
+  .endd.end {
+    background-color: rgb(78, 1, 78);
+  }
+}
+
+.login {
+  width: 100%;
+  height: 100vh;
+  background-color: #010101;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .box {
+    text-align: center;
+    box-shadow: 2px 2px 40px purple;
+    &:hover {
+      box-shadow: 2px 2px 40px rebeccapurple;
+    }
+
+    width: 30%;
+    .logo {
+      box-shadow: 2px 2px 8px white;
+      width: 80%;
+      margin: 10px auto;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .inputBox {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      margin: 10px auto;
+      .inputN {
+        padding: 10px 20px;
+        border: none;
+        margin: 15px 0;
+        border-radius: 10px;
+        box-shadow: 1px 1px 7px purple;
+        background: #010101;
+        color: white;
+        font-size: 20px;
+      }
+      .start {
+        padding: 10px 20px;
+        border: none;
+        margin: 15px 0;
+        border-radius: 10px;
+        box-shadow: 1px 1px 7px #010101;
+        background: purple;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        &:hover {
+          background-color: rgb(181, 3, 181);
+        }
+      }
+    }
+  }
+}
+.retry {
+  display: inline-block;
+  margin: 20px;
+  width: 60px;
+  height: 60px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, black, rgb(37, 1, 37), black);
+  &:hover {
+    background: linear-gradient(to bottom, black, rgb(111, 1, 111), black);
+    cursor: pointer;
+  }
+  .icon {
+    font-size: 55px;
+    padding: 5px;
+  }
+}
